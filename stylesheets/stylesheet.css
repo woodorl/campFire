@@ -33,7 +33,8 @@ body {margin : 0;padding: 0;background-color:black;}
 }
 
 
-/* ------------- 잔디와 관련된 코드 ------------- */
+/* ------------- 잔디 ------------- */
+
 .grass {
   position: absolute;
   width: 600px; height: 400px; z-index: 1;
@@ -46,7 +47,9 @@ div.grass {
     -webkit-animation: grassGlow 4s infinite;
 }
 
-/* ------------- 모닥불과 관련된 코드 ------------- */
+
+/* ------------- 모닥불 ------------- */
+
 .fire {
   position: absolute;
   -webkit-animation: fireGlow 4s infinite;
@@ -132,7 +135,9 @@ div.grass {
   -webkit-animation: spark2 2.3s infinite ease-out;
 }
 
-/* ------------- 배경과 관련된 코드 ------------- */
+
+/* ------------- 배경 ------------- */
+
 .back {
   position: absolute;
   width:400px;
@@ -165,6 +170,21 @@ div.back {
   -webkit-mask-size: 4000px 1200px;
 }
 
+#cloud1 {
+  position: absolute;
+  -webkit-animation: cloud1 52s infinite linear;
+}
+
+#cloud2 {
+  position: absolute;
+  -webkit-animation: cloud2 160s infinite linear;
+}
+
+#cloud3 {
+  position: absolute;
+  -webkit-animation: cloud3 36s infinite linear;
+}
+
 .moon {
   position: absolute;
   width: 80px;
@@ -177,6 +197,9 @@ div.back {
   z-index: 1;
 }
 
+
+/* ------------- 나방 ------------- */
+
 #mothWing {position: absolute; width: 4px; height: 2px; background-color: yellow; -webkit-animation: wing .3s infinite;}
 #mothPivot {-webkit-transform: translate3d(300px, 280px, -10px); -webkit-animation: moth 1.062s infinite linear;}
 
@@ -186,7 +209,9 @@ div.back {
 #mothWing3 {position: absolute; width: 3px; height: 1.5px; background-color: yellow; -webkit-animation: wing .2s infinite;}
 #mothPivot3 {-webkit-transform: translate3d(282px, 312px, 10px);}
 
-/* ------------- 애니메이션 관련된 코드 ------------- */
+
+/* ------------- 애니메이션 ------------- */
+
 @-webkit-keyframes grassGlow {
   0% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(1.0); opacity: 0.4;}
   5% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.94); opacity: 0.3;}
@@ -306,4 +331,19 @@ div.back {
   0% {-webkit-filter: brightness(1.5);}
   50% {-webkit-filter: brightness(0.1);}
   100% {-webkit-filter: brightness(1.5);}
+}
+
+@-webkit-keyframes cloud1 {
+  0% {-webkit-transform: translate3d(480px, -120px, -390px);}
+  100% {-webkit-transform: translate3d(0px, -120px, -390px);}
+}
+
+@-webkit-keyframes cloud2 {
+  0% {-webkit-transform: translate3d(360px, -10px, -390px);}
+  100% {-webkit-transform: translate3d(0px, -10px, -390px);}
+}
+
+@-webkit-keyframes cloud3 {
+  0% {-webkit-transform: translate3d(480px, 20px, -390px);}
+  100% {-webkit-transform: translate3d(0px, 20px, -390px);}
 }
