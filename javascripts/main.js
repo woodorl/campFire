@@ -2,6 +2,9 @@ var scene;
 var fire;
 var moth;
 var count = 0;
+var opn;
+var opa = 1;
+var textopa = 0;
 
 var init = function() {
     scene = document.querySelector('#scene');
@@ -12,6 +15,7 @@ var init = function() {
     moth = document.querySelector('#moth');
     moth2 = document.querySelector('#moth2');
     moth3 = document.querySelector('#moth3');
+    opn = document.querySelector('#opening');
 };
 
 window.onload = function() {
@@ -31,7 +35,19 @@ window.onmousemove = function(e) {
 var loop = function() {
     requestAnimationFrame(loop);
     count++;
+    opening();
     moth.style['-webkit-transform'] = 'translate3d(' + 10 * Math.sin(count * 0.3) + 'px,' + 20 * Math.cos(count * 0.1) + 'px,' + 20 * Math.cos(count * 0.3) + 'px)';
     moth2.style['-webkit-transform'] = 'translate3d(' + 4 * Math.sin(count * 0.2) + 'px,' + 5 * Math.cos(count * 0.2) + 'px,' + 10 * Math.cos(count * 0.3) + 'px)';
     moth3.style['-webkit-transform'] = 'translate3d(' + 16 * Math.sin(count * (-0.24)) + 'px,' + 16 * Math.cos(count * (-0.22)) + 'px,' + 4 * Math.cos(count * 0.3) + 'px)';
+};
+
+var opening = function() {
+    
+    if (count < 500) {
+       if (count > 150) {if (opa > 0) {opa -= 0.01;}}
+       if (count > 10) {if (textopa < 1) {textopa += 0.03;}}
+    };
+    
+    opn.style['opacity'] = opa;
+    opn.style['color'] = 'rgba(255, 255, 100,' + textopa + ')';
 };
