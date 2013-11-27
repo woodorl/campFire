@@ -28,8 +28,8 @@ window.onmousemove = function(e) {
     scene.style['-webkit-transform'] = 'rotateY(' + dx * 0.04 + 'deg)';
     fire.style['-webkit-transform'] = 'rotateY(' + dx *(-0.035) +'deg)';
     close1.style['left'] = -60 + (dx * 0.08) + 'px';
-    close2.style['left'] = 960 + (dx * 0.04) + 'px';
-    close3.style['left'] = 140 + (dx * 0.04) + 'px';
+    close2.style['right'] = 15 + (dx * 0.01) + '%';
+    close3.style['left'] = 15 + (dx * 0.01) + '%';
 };
 
 var loop = function() {
