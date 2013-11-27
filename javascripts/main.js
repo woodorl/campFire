@@ -42,6 +42,9 @@ var loop = function() {
 };
 
 var opening = function() {
+    if (count == 10) {
+        opn.textContent = 'Make Fire...';
+    };
     
     if (count < 500) {
        if (count > 150) {if (opa > 0) {opa -= 0.01;}}

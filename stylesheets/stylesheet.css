@@ -16,11 +16,12 @@ body {margin : 0;padding: 0;background-color:black;}
   cursor: default;
   font-family: 'La Belle Aurore', cursive;
   font-size: 2em;
+  opacity: 1;
 }
 
 #close1 {
   position: absolute;
-  bottom: -5%;
+  top: 200px;
   height: 64%;
   left: -60px;
   z-index: 4;
@@ -29,9 +30,9 @@ body {margin : 0;padding: 0;background-color:black;}
 
 #close2 {
   position: absolute;
-  bottom: 2%;
+  top: 380px;
   height: 30%;
-  left: 960px;
+  left: 70%;
   z-index: 3;
   -webkit-filter: blur(2px);
 }
@@ -39,9 +40,9 @@ body {margin : 0;padding: 0;background-color:black;}
 
 #close3 {
   position: absolute;
-  bottom: 10%;
+  top: 340px;
   height: 30%;
-  left: 140px;
+  left: 15%;
   z-index: 3;
   -webkit-filter: blur(2px);
 }
