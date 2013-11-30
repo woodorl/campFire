@@ -24,12 +24,14 @@ window.onload = function() {
 };
 
 window.onmousemove = function(e) {
+    if(count > 100) {
     var dx = (window.innerWidth / 2 - e.pageX);
     scene.style['-webkit-transform'] = 'rotateY(' + dx * 0.04 + 'deg)';
     fire.style['-webkit-transform'] = 'rotateY(' + dx *(-0.035) +'deg)';
     close1.style['left'] = -60 + (dx * 0.08) + 'px';
     close2.style['right'] = -5 + (dx * -0.003) + '%';
     close3.style['left'] = 15 + (dx * 0.003) + '%';
+    };
 };
 
 var loop = function() {
@@ -46,8 +48,8 @@ var opening = function() {
         opn.textContent = 'Make Fire...';
     };
     
-    if (count < 500) {
-       if (count > 150) {if (opa > 0) {opa -= 0.01;}}
+    if (count < 300) {
+       if (count > 100) {if (opa > 0) {opa -= 0.01;}}
        if (count > 10) {if (textopa < 1) {textopa += 0.03;}}
     };
     

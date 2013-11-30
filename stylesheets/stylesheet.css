@@ -176,14 +176,14 @@ div.back {
   background: -webkit-radial-gradient(center, ellipse cover,  rgba(43,97,150,1) 7%,rgba(15,68,81,1) 23%,rgba(4,13,22,1) 82%);
 }
 
-#backCover{
+.backCover{
   position: absolute;
-  width: 4000px; height: 1200px;
-  -webkit-transform: translate3d(-1700px, -400px, -242px);
+  width: 1000px; height: 1000px;
   background-color: black;
-  -webkit-mask-image: url(../images/back_cover.png);
-  -webkit-mask-size: 4000px 1200px;
 }
+
+#backCoverLeft {-webkit-transform: translate3d(-850px, -400px, -242px);}
+#backCoverRight {-webkit-transform: translate3d(450px, -400px, -242px);}
 
 #cloud1 {
   position: absolute;
