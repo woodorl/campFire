@@ -11,10 +11,86 @@
   <img id="close3" src="./images/close_wood3.png">
   <body>
     <audio src="./sound/fire.mp3" autoplay loop preload></audio>
+    <audio id="owlSFX" hidden>
+      <source src="./sound/wingFlap.mp3">
+    </audio>
     <div id="opening"></div>
   
     <div id="stage">    
       <div id="scene">
+      
+        <div class="creature">
+        
+          <div class="creature" id="owl">
+            <img class="creature" src="./images/creature/owl/owl.png">
+            <div class="creature" id="owl_wingL">
+              <img class="creature" src="./images/creature/owl/wingL.png">
+            </div>
+            <div class="creature" id="owl_wingR">
+              <img class="creature" src="./images/creature/owl/wingR.png">
+            </div>
+            <div class="creature" id="owl_eyeL">
+              <img class="creature" id="eyeOpenL" src="./images/creature/owl/eyeL.png">
+              <img class="creature" id="eyeCloseL" src="./images/creature/owl/eyeL_close.png">
+            </div>
+            <div class="creature" id="owl_eyeR">
+              <img class="creature" id="eyeOpenR" src="./images/creature/owl/eyeR.png">
+              <img class="creature" id="eyeCloseR" src="./images/creature/owl/eyeR_close.png">
+            </div>
+            <div class="creature" id="owl_mouth">
+              <img class="creature" src="./images/creature/owl/mouth.png">
+            </div>
+          </div>
+          
+          <div class="creature" id="owlTree">
+            <img class="creature" src="./images/creature/owl/tree.png">
+          </div>
+        
+          <div class="creature" id="body_bottom">
+            <img class="creature" src="./images/creature/hunter/body_bottom.png">
+            <div class="creature" id="body_upper">
+              <img class="creature" src="./images/creature/hunter/body_upper.png">
+              <img class="creature" id="padding_back" src="./images/creature/hunter/body_padding-back.png">
+              <img class="creature" id="padding_front" src="./images/creature/hunter/body_padding-front.png">
+              <div class="creature" id="head">
+                <img class="creature" src="./images/creature/hunter/head.png">
+              </div>
+              <div class="creature" id="armL1">
+                <img class="creature" src="./images/creature/hunter/arm1.png">
+                <div class="creature" id="armL2">
+                  <img class="creature" src="./images/creature/hunter/arm2.png">
+                </div>
+              </div>
+              <div class="creature" id="armR1">
+                <img class="creature" src="./images/creature/hunter/arm1.png">
+                <div class="creature" id="armR2">
+                  <img class="creature" src="./images/creature/hunter/arm2.png">
+                  <div class="creature" id="rifle">
+                    <img class="creature" src="./images/creature/hunter/rifle.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="creature" id="legL1">
+            <img class="creature" src="./images/creature/hunter/leg1.png">
+            <div class="creature" id="legL2">
+              <img class="creature" src="./images/creature/hunter/leg2.png">
+            </div>
+          </div>
+          <div class="creature" id="legR1">
+            <img class="creature" src="./images/creature/hunter/leg1.png">
+            <div class="creature" id="legR2">
+              <img class="creature" src="./images/creature/hunter/leg2.png">
+            </div>
+          </div>
+          
+          <div class="creature" id="wood">
+            <img class="creature" src="./images/creature/hunter/wood.png">
+          </div>
+          <div class="shadow"></div>
+        </div>
       
         <div class="grass">Hello</div>
         <img class="grass" src="./images/grass.jpg">
@@ -64,9 +140,9 @@
         <img id=cloud1 src="./images/cloud1.png">
         <img id=cloud2 src="./images/cloud2.png">
         <img id=cloud3 src="./images/cloud3.png">
-    
-        <div id="owl"></div>
       </div>
     </div>
+    
+    <div id="test"></div>
   </body>
 </html>

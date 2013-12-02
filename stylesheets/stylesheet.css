@@ -4,6 +4,7 @@ body {margin : 0;padding: 0;background-color:black;}
 #stage{position: relative;margin: auto;width: 600px;height: 400px;-webkit-perspective: 400px center center;}
 #scene{position: absolute;width: 600px;height: 400px; -webkit-transform-style: preserve-3d;}
 #firePivot{position: absolute; width: 600px; height: 400px; -webkit-transform-style: preserve-3d; background-color: rgba(255,255,255,0);}
+/* #test{position: absolute; top: 0px; width:40px; height:40px; font-size: 2em; text-align: center; background-color: red; color:white;} */
 
 #opening {
   position: absolute;
@@ -26,6 +27,7 @@ body {margin : 0;padding: 0;background-color:black;}
   left: -60px;
   z-index: 4;
   -webkit-filter: blur(6px);
+  opacity: 0.9;
 }
 
 #close2 {
@@ -35,6 +37,7 @@ body {margin : 0;padding: 0;background-color:black;}
   right: -5%;
   z-index: 3;
   -webkit-filter: blur(2px);
+  opacity: 0.8;
 }
 
 
@@ -45,6 +48,7 @@ body {margin : 0;padding: 0;background-color:black;}
   left: 15%;
   z-index: 3;
   -webkit-filter: blur(2px);
+  opacity: 0.8;
 }
 
 
@@ -52,8 +56,8 @@ body {margin : 0;padding: 0;background-color:black;}
 
 .grass {
   position: absolute;
-  width: 600px; height: 400px; z-index: 1;
-  -webkit-transform: translate(0px, 200px) rotateX(90deg);
+  width: 600px; height: 400px; z-index: -1;
+  -webkit-transform: translate3d(0px, 204px, -12px) rotateX(90deg);
 }
 
 div.grass {
@@ -62,6 +66,25 @@ div.grass {
     -webkit-animation: grassGlow 4s infinite;
 }
 
+@-webkit-keyframes grassGlow {
+  0% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(1.0); opacity: 0.4;}
+  5% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.94); opacity: 0.3;}
+  8% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(1.02); opacity: 0.45;}
+  15% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.94); opacity: 0.3;}
+  18% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.98); opacity: 0.35;}
+  20% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.92); opacity: 0.3;}
+  28% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(1.05); opacity: 0.5;}
+  36% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.92); opacity: 0.3;}
+  40% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.98); opacity: 0.36;}
+  43% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.88); opacity: 0.28;}
+  50% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(1.0); opacity: 0.4;}
+  58% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.94); opacity: 0.3;}
+  70% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(1.03); opacity: 0.5;}
+  80% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.85); opacity: 0.28;}
+  85% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(1.02); opacity: 0.45;}
+  93% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(0.98); opacity: 0.35;}
+  100% {-webkit-transform: translate3d(0px, 200px, -1px) rotateX(90deg) scale(1.0); opacity: 0.4;}
+}
 
 /* ------------- 모닥불 ------------- */
 
@@ -80,24 +103,24 @@ div.grass {
 .fireWood {
   position: absolute;
   opacity: 1;
-  -webkit-transform: translate3d(273px, 377px, -2px);
+  -webkit-transform: translate3d(273px, 377px, -1px);
   -webkit-animation: fireWood 4s infinite;
 }
 
 #fireWood2 {
   opacity: 1;
-  -webkit-transform: translate3d(277px, 376px, -12px) rotateY(-45deg);
+  -webkit-transform: translate3d(277px, 376px, -10px) rotateY(-45deg);
 }
 
 #fireWood3 {
   opacity: 1;
-  -webkit-transform: translate3d(293px, 376px, -12px) rotateY(-135deg);
+  -webkit-transform: translate3d(293px, 376px, -10px) rotateY(-135deg);
 }
 
 #fireShadow {
   position: absolute;
   width: 200px; height: 200px;
-  -webkit-transform: translate3d(198px, 297px, -12px) rotateX(90deg);
+  -webkit-transform: translate3d(198px, 298px, -14px) rotateX(90deg);
   background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 12%,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 100%);
   -webkit-animation: fireWood 4s infinite;
 }
@@ -148,103 +171,6 @@ div.grass {
   -webkit-mask-image: url(../images/spark.png);
   -webkit-mask-size: 2px 2px;
   -webkit-animation: spark2 2.3s infinite ease-out;
-}
-
-
-/* ------------- 배경 ------------- */
-
-.back {
-  position: absolute;
-  width:400px;
-  -webkit-transform: translate3d(110px, -170px, -280px);
-}
-
-#starField {
-  position: absolute;
-  width:2000px; height: 400px;
-  background-color: white;
-  -webkit-transform: translate3d(110px, -170px, -398px);
-  -webkit-mask-image: url(../images/star.png);
-  -webkit-mask-size: 200px 200px;
-  -webkit-animation: starField 200s infinite linear;
-  
-}
-
-div.back {
-  width: 800px; height: 800px;
-  -webkit-transform: translate3d(-40px, -380px, -400px);
-  background: -webkit-radial-gradient(center, ellipse cover,  rgba(43,97,150,1) 7%,rgba(15,68,81,1) 23%,rgba(4,13,22,1) 82%);
-}
-
-.backCover{
-  position: absolute;
-  width: 1000px; height: 1000px;
-  background-color: black;
-}
-
-#backCoverLeft {-webkit-transform: translate3d(-850px, -400px, -242px);}
-#backCoverRight {-webkit-transform: translate3d(450px, -400px, -242px);}
-
-#cloud1 {
-  position: absolute;
-  -webkit-animation: cloud1 52s infinite linear;
-}
-
-#cloud2 {
-  position: absolute;
-  -webkit-animation: cloud2 160s infinite linear;
-}
-
-#cloud3 {
-  position: absolute;
-  -webkit-animation: cloud3 36s infinite linear;
-}
-
-.moon {
-  position: absolute;
-  width: 80px;
-  -webkit-transform: translate3d(338px, -12px, -395px);
-  z-index: 2;
-}
-
-#moonGlow {
-  -webkit-filter: blur(20px) brightness(1.5);
-  z-index: 1;
-}
-
-
-/* ------------- 나방 ------------- */
-
-#mothWing {position: absolute; width: 4px; height: 2px; background-color: yellow; -webkit-animation: wing .3s infinite;}
-#mothPivot {-webkit-transform: translate3d(300px, 280px, -10px); -webkit-animation: moth 1.062s infinite linear;}
-
-#mothWing2 {position: absolute; width: 2px; height: 1px; background-color: yellow; -webkit-animation: wing .1s infinite;}
-#mothPivot2 {-webkit-transform: translate3d(320px, 310px, -4px);}
-
-#mothWing3 {position: absolute; width: 3px; height: 1.5px; background-color: yellow; -webkit-animation: wing .2s infinite;}
-#mothPivot3 {-webkit-transform: translate3d(282px, 312px, 10px);}
-
-
-/* ------------- 애니메이션 ------------- */
-
-@-webkit-keyframes grassGlow {
-  0% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(1.0); opacity: 0.4;}
-  5% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.94); opacity: 0.3;}
-  8% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(1.02); opacity: 0.45;}
-  15% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.94); opacity: 0.3;}
-  18% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.98); opacity: 0.35;}
-  20% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.92); opacity: 0.3;}
-  28% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(1.05); opacity: 0.5;}
-  36% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.92); opacity: 0.3;}
-  40% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.98); opacity: 0.36;}
-  43% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.88); opacity: 0.28;}
-  50% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(1.0); opacity: 0.4;}
-  58% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.94); opacity: 0.3;}
-  70% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(1.03); opacity: 0.5;}
-  80% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.85); opacity: 0.28;}
-  85% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(1.02); opacity: 0.45;}
-  93% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(0.98); opacity: 0.35;}
-  100% {-webkit-transform: translate(0px, 198px) rotateX(90deg) scale(1.0); opacity: 0.4;}
 }
 
 @-webkit-keyframes fireGlow {
@@ -307,11 +233,6 @@ div.back {
   100% {-webkit-filter: brightness(1.05);}
 }
 
-@-webkit-keyframes starField {
-  0% {-webkit-transform: translate3d(200px, -170px, -395px);}
-  100% {-webkit-transform: translate3d(-1200px, -170px, -395px);}
-}
-
 @-webkit-keyframes spark1 {
   0% {-webkit-transform: translate3d(290px, 360px, 0px); background-color: rgba(253,255,186,1.0);}
   40% {-webkit-transform: translate3d(290px, 300px, 0px); background-color: rgba(140,13,0,0);}
@@ -336,16 +257,65 @@ div.back {
   100% {-webkit-transform: translate3d(308px, 280px, 0px); background-color: rgba(140,13,0,0);}
 }
 
-@-webkit-keyframes wing {
-  0% {-webkit-transform: rotateY(0deg);}
-  50% {-webkit-transform: rotateY(180deg);}
-  100% {-webkit-transform: rotateY(0deg);}
+/* ------------- 배경 ------------- */
+
+.back {
+  position: absolute;
+  width:400px;
+  -webkit-transform: translate3d(110px, -170px, -280px);
 }
 
-@-webkit-keyframes moth {
-  0% {-webkit-filter: brightness(1.5);}
-  50% {-webkit-filter: brightness(0.1);}
-  100% {-webkit-filter: brightness(1.5);}
+#starField {
+  position: absolute;
+  width:2000px; height: 400px;
+  background-color: white;
+  -webkit-transform: translate3d(110px, -170px, -398px);
+  -webkit-mask-image: url(../images/star.png);
+  -webkit-mask-size: 200px 200px;
+  -webkit-animation: starField 200s infinite linear;
+  
+}
+
+div.back {
+  width: 800px; height: 800px;
+  -webkit-transform: translate3d(-40px, -380px, -400px);
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(43,97,150,1) 7%,rgba(15,68,81,1) 23%,rgba(4,13,22,1) 82%);
+}
+
+.backCover{
+  position: absolute;
+  width: 3000px; height: 1000px;
+  background-color: black;
+}
+
+#backCoverLeft {-webkit-transform: translate3d(-2850px, -400px, -242px);}
+#backCoverRight {-webkit-transform: translate3d(450px, -400px, -242px);}
+
+#cloud1 {
+  position: absolute;
+  -webkit-animation: cloud1 52s infinite linear;
+}
+
+#cloud2 {
+  position: absolute;
+  -webkit-animation: cloud2 160s infinite linear;
+}
+
+#cloud3 {
+  position: absolute;
+  -webkit-animation: cloud3 36s infinite linear;
+}
+
+.moon {
+  position: absolute;
+  width: 80px;
+  -webkit-transform: translate3d(338px, -12px, -395px);
+  z-index: 2;
+}
+
+#moonGlow {
+  -webkit-filter: blur(20px) brightness(1.5);
+  z-index: 1;
 }
 
 @-webkit-keyframes cloud1 {
@@ -361,4 +331,547 @@ div.back {
 @-webkit-keyframes cloud3 {
   0% {-webkit-transform: translate3d(480px, 20px, -390px);}
   100% {-webkit-transform: translate3d(0px, 20px, -390px);}
+}
+
+@-webkit-keyframes starField {
+  0% {-webkit-transform: translate3d(200px, -170px, -395px);}
+  100% {-webkit-transform: translate3d(-1200px, -170px, -395px);}
+}
+
+/* ------------- 나방 ------------- */
+
+#mothWing {position: absolute; width: 4px; height: 2px; background-color: yellow; -webkit-animation: wing .3s infinite;}
+#mothPivot {-webkit-transform: translate3d(300px, 280px, -10px); -webkit-animation: moth 1.062s infinite linear;}
+
+#mothWing2 {position: absolute; width: 2px; height: 1px; background-color: yellow; -webkit-animation: wing .1s infinite;}
+#mothPivot2 {-webkit-transform: translate3d(320px, 310px, -4px);}
+
+#mothWing3 {position: absolute; width: 3px; height: 1.5px; background-color: yellow; -webkit-animation: wing .2s infinite;}
+#mothPivot3 {-webkit-transform: translate3d(282px, 312px, 10px);}
+
+@-webkit-keyframes wing {
+  0% {-webkit-transform: rotateY(0deg);}
+  50% {-webkit-transform: rotateY(180deg);}
+  100% {-webkit-transform: rotateY(0deg);}
+}
+
+@-webkit-keyframes moth {
+  0% {-webkit-filter: brightness(1.5);}
+  50% {-webkit-filter: brightness(0.1);}
+  100% {-webkit-filter: brightness(1.5);}
+}
+
+/* ------------- 사냥꾼 ------------- */
+
+.creature {position: absolute; -webkit-transform-style:preserve-3d;}
+
+#body_bottom {
+  -webkit-transform-origin: 40px 50px;
+  -webkit-transform: translate3d(120px,324px,0px) rotateZ(0deg);
+  -webkit-animation: body_bottom_sitDown 1s infinite ease-in-out;
+}
+
+#body_upper {
+  -webkit-transform-origin: 24px 45px;
+  -webkit-transform: translate3d(0px,-30px,-2px) rotateZ(20deg);
+  -webkit-animation: body_upper_sitDown 1s infinite ease-in-out;
+}
+
+#padding_front {-webkit-transform: translate3d(-5px,-12px,20px);}
+#padding_back {-webkit-transform: translate3d(50px,-12px,-10px);}
+
+#armL1 {
+  -webkit-transform-origin: 14px 8px;
+  -webkit-transform: translate3d(0px,0px,30px) rotateZ(-20deg);
+  -webkit-animation: armL1_sitDown 1s infinite ease-in-out;
+}
+
+#armL2 {
+  -webkit-transform-origin: 12px 12px;
+  -webkit-transform: translate3d(-4px, 30px, 2px) rotateZ(-30deg);
+  -webkit-animation: armL2_sitDown 1s infinite ease-in-out;
+}
+
+#armR1 {
+  -webkit-transform-origin: 14px 8px;
+  -webkit-transform: translate3d(38px,0px,-28px) rotateZ(-20deg);
+  -webkit-animation: armR1_sitDown 1s infinite ease-in-out;
+}
+
+#armR2 {
+  -webkit-transform-origin: 12px 12px;
+  -webkit-transform: translate3d(-4px, 30px, 2px) rotateZ(-30deg);
+  -webkit-animation: armR2_sitDown 1s infinite ease-in-out;
+}
+
+#head {
+  -webkit-transform-origin: 44px 84px;
+  -webkit-transform: translate3d(0px,-95px,12px) rotateZ(-16deg);
+  -webkit-animation: head_sitDown 1s infinite ease-in-out;
+}
+
+#legL1 {
+  -webkit-transform-origin: 4px 2px;
+  -webkit-transform: translate3d(144px,375px,4px) rotateZ(-70deg);
+  -webkit-animation: legL1_sitDown 1s infinite ease-in-out;
+}
+
+#legL2 {
+  -webkit-transform-origin: 6px 3px;
+  -webkit-transform: translate3d(-3px,20px,1px) rotateZ(20deg);
+  -webkit-animation: legL2_sitDown 1s infinite ease-in-out;
+}
+
+#legR1 {
+  -webkit-transform-origin: 4px 2px;
+  -webkit-transform: translate3d(182px,375px,-24px) rotateZ(-70deg);
+  -webkit-animation: legR1_sitDown 1s infinite ease-in-out;
+}
+
+#legR2 {
+  -webkit-transform-origin: 6px 3px;
+  -webkit-transform: translate3d(-3px,20px,1px) rotateZ(20deg);
+  -webkit-animation: legR2_sitDown 1s infinite ease-in-out;
+}
+
+#wood {
+  -webkit-transform: translate3d(100px,372px,-4px) rotateZ(0deg);
+}
+
+#rifle {
+  -webkit-transform-origin: 24px 18px;
+  -webkit-transform: translate3d(-3px, 44px, 6px) rotateZ(60deg);
+  -webkit-animation: rifle_sitDown 1s infinite ease-in-out;
+}
+
+.shadow {
+  width: 200px; height: 60px; -webkit-transform-origin: 70px 60px; background-color:black; opacity:0.8;
+  -webkit-filter: blur(8px);
+  -webkit-transform: translate3d(14px, 342px, -10px) rotateX(90deg) rotateZ(20deg);
+}
+
+
+
+/* ----- 사냥꾼 착석 ----- */
+
+@-webkit-keyframes body_bottom_sitDown {
+  0% {-webkit-transform: translate3d(124px,298px,-2px) rotateZ(10deg);}
+  50% {-webkit-transform: translate3d(124px,308px,-2px) rotateZ(20deg);}
+  100% {-webkit-transform: translate3d(120px,324px,0px) rotateZ(0deg);}
+}
+
+@-webkit-keyframes body_upper_sitDown {
+  0% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(30deg);}
+  100% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(20deg);}
+}
+
+@-webkit-keyframes head_sitDown {
+  0% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-40deg);}
+  60% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-10deg);}
+  80% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-24deg);}
+  100% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-16deg);}
+}
+
+@-webkit-keyframes armL1_sitDown {
+  0% {-webkit-transform: translate3d(4px,2px,30px) rotateZ(24deg);}
+  50% {-webkit-transform: translate3d(2px,-4px,30px) rotateZ(0deg);}
+  100% {-webkit-transform: translate3d(-2px,2px,30px) rotateZ(-14deg);}
+}
+
+@-webkit-keyframes armL2_sitDown {
+  0% {-webkit-transform: translate3d(8px, 36px, 2px) rotateZ(-110deg);}
+  50% {-webkit-transform: translate3d(-2px, 32px, 2px) rotateZ(-60deg);}
+  100% {-webkit-transform: translate3d(-4px, 30px, 2px) rotateZ(-40deg);}
+}
+
+@-webkit-keyframes armR1_sitDown {
+  0% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-34deg);}
+  30% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-54deg);}
+  60% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-54deg);}
+  100% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-14deg);}
+}
+
+@-webkit-keyframes armR2_sitDown {
+  0% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-60deg);}
+  30% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-70deg);}
+  60% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-75deg);}
+  100% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-40deg);}
+}
+
+@-webkit-keyframes rifle_sitDown {
+  0% {-webkit-transform: translate3d(-24px, -8px, 36px) rotateZ(70deg);}
+  30% {-webkit-transform: translate3d(-26px, 44px, 34px) rotateZ(20deg);}
+  60% {-webkit-transform: translate3d(-26px, 44px, 30px) rotateZ(15deg);}
+  100% {-webkit-transform: translate3d(-3px, 44px, 6px) rotateZ(60deg);}
+}
+
+@-webkit-keyframes legL1_sitDown {
+  0% {-webkit-transform: translate3d(148px,346px,4px) rotateZ(-30deg);}
+  50% {-webkit-transform: translate3d(148px,354px,4px) rotateZ(-50deg);}
+  100% {-webkit-transform: translate3d(144px,375px,4px) rotateZ(-70deg);}
+}
+
+@-webkit-keyframes legL2_sitDown {
+  0% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(30deg);}
+  50% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(60deg);}
+  100% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(20deg);}
+}
+
+@-webkit-keyframes legR1_sitDown {
+  0% {-webkit-transform: translate3d(186px,352px,-24px) rotateZ(-30deg);}
+  
+  100% {-webkit-transform: translate3d(182px,375px,-24px) rotateZ(-70deg);}
+}
+
+@-webkit-keyframes legR2_sitDown {
+  0% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(30deg);}
+  100% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(20deg);}
+}
+
+
+/* ----- 사냥꾼 두리번 ----- */
+
+@-webkit-keyframes body_bottom_seek {
+  0% {-webkit-transform: translate3d(124px,298px,-2px) rotateZ(10deg);}
+  50% {-webkit-transform: translate3d(124px,302px,-2px) rotateZ(10deg);}
+  100% {-webkit-transform: translate3d(124px,298px,-2px) rotateZ(10deg);}
+}
+
+@-webkit-keyframes body_upper_seek {
+  0% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(30deg);}
+  100% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(30deg);}
+}
+
+@-webkit-keyframes head_seek {
+  0% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-40deg);}
+  5% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-60deg);}
+  30% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-60deg);}
+  35% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-30deg);}
+  60% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-30deg);}
+  65% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-40deg);}
+  100% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-40deg);}
+}
+
+@-webkit-keyframes armL1_seek {
+  0% {-webkit-transform: translate3d(4px,2px,30px) rotateZ(24deg);}
+  50% {-webkit-transform: translate3d(4px,2px,30px) rotateZ(32deg);}
+  100% {-webkit-transform: translate3d(4px,2px,30px) rotateZ(24deg);}
+}
+
+@-webkit-keyframes armL2_seek {
+  0% {-webkit-transform: translate3d(8px, 36px, 2px) rotateZ(-110deg);}
+  50% {-webkit-transform: translate3d(8px, 36px, 2px) rotateZ(-116deg);}
+  100% {-webkit-transform: translate3d(8px, 36px, 2px) rotateZ(-110deg);}
+}
+
+@-webkit-keyframes armR1_seek {
+  0% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-34deg);}
+  50% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-24deg);}
+  100% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-34deg);}
+}
+
+@-webkit-keyframes armR2_seek {
+  0% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-60deg);}
+  50% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-80deg);}
+  100% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-60deg);}
+}
+
+@-webkit-keyframes rifle_seek {
+  0% {-webkit-transform: translate3d(-24px, -8px, 36px) rotateZ(70deg);}
+  50% {-webkit-transform: translate3d(-24px, -8px, 36px) rotateZ(66deg);}
+  100% {-webkit-transform: translate3d(-24px, -8px, 36px) rotateZ(70deg);}
+}
+
+@-webkit-keyframes legL1_seek {
+  0% {-webkit-transform: translate3d(148px,346px,4px) rotateZ(-30deg);}
+  50% {-webkit-transform: translate3d(148px,349px,4px) rotateZ(-40deg);}
+  100% {-webkit-transform: translate3d(148px,346px,4px) rotateZ(-30deg);}
+}
+
+@-webkit-keyframes legL2_seek {
+  0% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(30deg);}
+  50% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(46deg);}
+  100% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(30deg);}
+}
+
+@-webkit-keyframes legR1_seek {
+  0% {-webkit-transform: translate3d(186px,352px,-24px) rotateZ(-30deg);}
+  50% {-webkit-transform: translate3d(186px,354px,-24px) rotateZ(-40deg);}
+  100% {-webkit-transform: translate3d(186px,352px,-24px) rotateZ(-30deg);}
+}
+
+@-webkit-keyframes legR2_seek {
+  0% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(30deg);}
+  50% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(46deg);}
+  100% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(30deg);}
+}
+
+/* ----- 사냥꾼 기상 ----- */
+
+@-webkit-keyframes body_bottom_sitUp {
+  0% {-webkit-transform: translate3d(120px,324px,0px) rotateZ(0deg);}
+  50% {-webkit-transform: translate3d(120px,312px,0px) rotateZ(-10deg);}
+  100% {-webkit-transform: translate3d(124px,298px,-2px) rotateZ(10deg);}
+}
+
+@-webkit-keyframes body_upper_sitUp {
+  0% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(20deg);}
+  100% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(30deg);}
+}
+
+@-webkit-keyframes head_sitUp {
+  0% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-16deg);}
+  100% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-40deg);}
+}
+
+@-webkit-keyframes armL1_sitUp {
+  0% {-webkit-transform: translate3d(-2px,2px,30px) rotateZ(-14deg);}
+  50% {-webkit-transform: translate3d(-3px,2px,30px) rotateZ(-84deg);}
+  100% {-webkit-transform: translate3d(4px,2px,30px) rotateZ(24deg);}
+}
+
+@-webkit-keyframes armL2_sitUp {
+  0% {-webkit-transform: translate3d(-4px, 30px, 2px) rotateZ(-40deg);}
+  50% {-webkit-transform: translate3d(0px, 30px, 2px) rotateZ(-70deg);}
+  100% {-webkit-transform: translate3d(8px, 36px, 2px) rotateZ(-110deg);}
+}
+
+@-webkit-keyframes armR1_sitUp {
+  0% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-14deg);}
+  50% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-54deg);}
+  100% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-34deg);}
+}
+
+@-webkit-keyframes armR2_sitUp {
+  0% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-40deg);}
+  50% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-30deg);}
+  100% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-60deg);}
+}
+
+@-webkit-keyframes rifle_sitUp {
+  0% {-webkit-transform: translate3d(-3px, 44px, 6px) rotateZ(60deg);}
+  50% {-webkit-transform: translate3d(-3px, 44px, 36px) rotateZ(20deg);}
+  100% {-webkit-transform: translate3d(-24px, -8px, 36px) rotateZ(70deg);}
+}
+
+@-webkit-keyframes legL1_sitUp {
+  0% {-webkit-transform: translate3d(144px,375px,4px) rotateZ(-70deg);}
+  50% {-webkit-transform: translate3d(144px,362px,4px) rotateZ(-80deg);}
+  100% {-webkit-transform: translate3d(148px,346px,4px) rotateZ(-30deg);}
+}
+
+@-webkit-keyframes legL2_sitUp {
+  0% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(20deg);}
+  50% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(90deg);}
+  100% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(30deg);}
+}
+
+@-webkit-keyframes legR1_sitUp {
+  0% {-webkit-transform: translate3d(182px,375px,-24px) rotateZ(-70deg);}
+  50% {-webkit-transform: translate3d(182px,364px,-24px) rotateZ(-80deg);}
+  100% {-webkit-transform: translate3d(186px,352px,-24px) rotateZ(-30deg);}
+}
+
+@-webkit-keyframes legR2_sitUp {
+  0% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(20deg);}
+  50% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(90deg);}
+  100% {-webkit-transform: translate3d(-3px,20px,1px) rotateZ(30deg);}
+}
+
+/* ----- 사냥꾼 기본 ----- */
+
+@-webkit-keyframes body_upper_sit {
+  0% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(20deg);}
+  50% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(14deg);}
+  100% {-webkit-transform: translate3d(0px,-30px,-2px) rotateZ(20deg);}
+}
+
+@-webkit-keyframes head_sit {
+  0% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-16deg);}
+  50% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-8deg);}
+  100% {-webkit-transform: translate3d(0px,-95px,12px) rotateZ(-16deg);}
+}
+
+@-webkit-keyframes armL1_sit {
+  0% {-webkit-transform: translate3d(-2px,2px,30px) rotateZ(-14deg);}
+  50% {-webkit-transform: translate3d(0px,0px,30px) rotateZ(-20deg);}
+  100% {-webkit-transform: translate3d(-2px,2px,30px) rotateZ(-14deg);}
+}
+
+@-webkit-keyframes armL2_sit {
+  0% {-webkit-transform: translate3d(-4px, 30px, 2px) rotateZ(-40deg);}
+  50% {-webkit-transform: translate3d(-4px, 30px, 2px) rotateZ(-26deg);}
+  100% {-webkit-transform: translate3d(-4px, 30px, 2px) rotateZ(-40deg);}
+}
+
+@-webkit-keyframes armR1_sit {
+  0% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-14deg);}
+  50% {-webkit-transform: translate3d(38px,0px,-32px) rotateZ(-20deg);}
+  100% {-webkit-transform: translate3d(36px,2px,-32px) rotateZ(-14deg);}
+}
+
+@-webkit-keyframes armR2_sit {
+  0% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-40deg);}
+  50% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-26deg);}
+  100% {-webkit-transform: translate3d(-4px, 30px, 1px) rotateZ(-40deg);}
+}
+
+
+/* ------------- 올빼미 ------------- */
+#owl {
+  -webkit-transform: translate3d(420px, 50px, -160px);
+  -webkit-animation: owl_surp 4s infinite ease-in-out;
+}
+
+#owl_eyeL {
+  -webkit-transform-origin: 16px 14px;
+  -webkit-transform: translate3d(6px, 20px, 4px);
+  -webkit-animation: owl_eyeL_surp 4s infinite ease-in-out;
+}
+
+#owl_eyeR {
+  -webkit-transform-origin: 12px 14px;
+  -webkit-transform: translate3d(45px, 20px, 4px);
+  -webkit-animation: owl_eyeR_surp 4s infinite ease-in-out;
+}
+
+#owl_wingL {
+  -webkit-transform-origin: 60px 23px;
+  -webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-110deg);
+  -webkit-animation: owl_wingL_surp 4s infinite ease-in-out;
+}
+
+#owl_wingR {
+  -webkit-transform-origin: 0px 23px;
+  -webkit-transform: translate3d(65px, 30px, -12px) rotateZ(110deg);
+  -webkit-animation: owl_wingR_surp 4s infinite ease-in-out;
+}
+
+#eyeOpenL{
+  opacity: 1;
+}
+
+#eyeOpenR {
+  opacity: 1;
+}
+
+#eyeCloseL {
+  opacity: 0;
+  -webkit-transform: translate3d(-2px, 14px, 0px);
+}
+
+#eyeCloseR {
+  opacity: 0;
+  -webkit-transform: translate3d(2px, 14px, 0px);
+}
+
+#owl_mouth {
+  -webkit-transform: translate3d(32px, 34px, 5px);
+  -webkit-animation: owl_mouth_surp 4s infinite ease-in-out;
+}
+
+#owlTree {
+  -webkit-transform: translate3d(362px, -160px, -165px);
+}
+
+
+
+/* ----- 올빼미 깜놀 ----- */
+
+@-webkit-keyframes owl_surp {
+  0% {-webkit-transform: translate3d(420px, 50px, -160px);}
+  5% {-webkit-transform: translate3d(420px, 20px, -160px);}
+  20% {-webkit-transform: translate3d(420px, 50px, -160px);}
+  100% {-webkit-transform: translate3d(420px, 50px, -160px);}
+}
+
+@-webkit-keyframes owl_eyeL_surp {
+  0% {-webkit-transform: translate3d(4px, 16px, 4px) scale(1.2);}
+  25% {-webkit-transform: translate3d(6px, 20px, 4px) scale(1.0);}
+  75% {-webkit-transform: translate3d(6px, 20px, 4px) scaleY(1.0);}
+  100% {-webkit-transform: translate3d(4px, 24px, 4px) scaleY(0.2);}
+}
+
+@-webkit-keyframes owl_eyeR_surp {
+  0% {-webkit-transform: translate3d(47px, 16px, 4px) scale(1.2);}
+  25% {-webkit-transform: translate3d(45px, 20px, 4px) scale(1.0);}
+  75% {-webkit-transform: translate3d(45px, 20px, 4px) scaleY(1.0);}
+  100% {-webkit-transform: translate3d(47px, 24px, 4px) scaleY(0.2);}
+}
+
+@-webkit-keyframes owl_mouth_surp {
+  0% {-webkit-transform: translate3d(32px, 34px, 5px);}
+  3% {-webkit-transform: translate3d(32px, 30px, 5px);}
+  6% {-webkit-transform: translate3d(32px, 35px, 5px);}
+  9% {-webkit-transform: translate3d(32px, 31px, 5px);}
+  12% {-webkit-transform: translate3d(32px, 36px, 5px);}
+  15% {-webkit-transform: translate3d(32px, 32px, 5px);}
+  18% {-webkit-transform: translate3d(32px, 35px, 5px);}
+  100% {-webkit-transform: translate3d(32px, 34px, 5px);}
+}
+
+@-webkit-keyframes owl_wingL_surp {
+  0% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-110deg);}
+  2% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(5deg);}
+  4% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-50deg);}
+  6% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-5deg);}
+  8% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-60deg);}
+  10% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-10deg);}
+  12% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-65deg);}
+  15% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-25deg);}
+  19% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-75deg);}
+  24% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-50deg);}
+  30% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-110deg);}  
+  100% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-110deg);}  
+}
+
+@-webkit-keyframes owl_wingR_surp {
+  0% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(110deg);}
+  2% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(-5deg);}
+  4% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(50deg);}
+  6% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(5deg);}
+  8% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(60deg);}
+  10% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(10deg);}
+  12% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(65deg);}
+  15% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(25deg);}
+  19% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(75deg);}
+  24% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(50deg);}
+  30% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(110deg);}  
+  100% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(110deg);}  
+}
+
+
+
+
+
+/* ----- 올빼미 기본 ----- */
+
+@-webkit-keyframes owl_eyeL_sleep {
+  0% {-webkit-transform: translate3d(6px, 20px, 4px);}
+  50% {-webkit-transform: translate3d(6px, 24px, 4px);}
+  100% {-webkit-transform: translate3d(6px, 20px, 4px);}
+}
+
+@-webkit-keyframes owl_eyeR_sleep {
+  0% {-webkit-transform: translate3d(45px, 20px, 4px);}
+  50% {-webkit-transform: translate3d(45px, 24px, 4px);}
+  100% {-webkit-transform: translate3d(45px, 20px, 4px);}
+}
+
+@-webkit-keyframes owl_mouth_sleep {
+  0% {-webkit-transform: translate3d(32px, 34px, 5px);}
+  50% {-webkit-transform: translate3d(32px, 40px, 5px);}
+  100% {-webkit-transform: translate3d(32px, 34px, 5px);}
+}
+
+@-webkit-keyframes owl_wingL_sleep {
+  0% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-110deg);}
+  50% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-105deg);}
+  100% {-webkit-transform: translate3d(-42px, 30px, -12px) rotateZ(-110deg);}
+}
+
+@-webkit-keyframes owl_wingR_sleep {
+  0% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(110deg);}
+  50% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(105deg);}
+  100% {-webkit-transform: translate3d(65px, 30px, -12px) rotateZ(110deg);}
 }
