@@ -448,9 +448,19 @@ div.back {
   width: 200px; height: 60px; -webkit-transform-origin: 70px 60px; background-color:black; opacity:0.8;
   -webkit-filter: blur(8px);
   -webkit-transform: translate3d(14px, 342px, -10px) rotateX(90deg) rotateZ(20deg);
+  -webkit-animation: shadow 1s infinite ease-in-out;
 }
 
 
+@-webkit-keyframes shadow {
+  0% {opacity : 0.8;}
+  20% {opacity : 0.6;}
+  32% {opacity : 0.82;}
+  48% {opacity : 0.7;}
+  76% {opacity : 0.9;}
+  92% {opacity : 0.5;}
+  100% {opacity : 0.8;}
+}
 
 /* ----- 사냥꾼 착석 ----- */
 

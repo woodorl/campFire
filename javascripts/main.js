@@ -4,6 +4,8 @@ var body_bottom, body_upper, armL1, armL2, armR1, armR2, head, legL1, legL2, leg
 var owl, owl_eyeL, owl_eyeR, owl_wingL, owl_wingR, eyeOpenL, eyeOpenR, eyeCloseL, eyeCloseR, owl_mouth;
 
 var owlSound = new Audio();
+var manSurp = new Audio();
+var manDis = new Audio();
 
 var rand = function(min, max) {
     return min + Math.round(Math.random() * (max-min));
@@ -79,6 +81,10 @@ var eventChange = function() {
     else if(eventStat == 3) {
         eventStat = 4;
         owlStat = 2;
+
+        manSurp = document.getElementById('manSFX-surp');
+        manSurp.currentTime = 0;
+        manSurp.play(); 
         
         owlSound = document.getElementById('owlSFX');
         owlSound.currentTime = 0;
@@ -93,6 +99,11 @@ var eventChange = function() {
         }
     else if(eventStat == 7) {
         eventStat = 8;
+        
+        manDis = document.getElementById('manSFX-dis');
+        manDis.currentTime = 0;
+        manDis.play();   
+        
         setTimeout(function(){eventStat = 1;}, 1000);
         }
 }
